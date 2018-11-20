@@ -207,6 +207,7 @@ bool compatible(int r,int n)
     
     return true;
 }
+
 int solution(int r)
 {
        
@@ -233,6 +234,7 @@ int solution(int r)
         sudoku[r] = 0;
         return 0;
 }
+
 int solution(int r,int n)
 {
     
@@ -240,12 +242,12 @@ int solution(int r,int n)
     {
         sudoku[r] = n;
         int i=0;
-          while(sudoku[r+i] != 0 && (r+i)<(SIZE*SIZE))
+          while(sudoku[r+i] != 0 && (r+i)<(SIZE*SIZE))		//finding the next empty box
           {
               i++;
           }
           
-          if(r+i == SIZE*SIZE)
+          if(r+i == SIZE*SIZE)		
             return 1;
          
         if(solution(r+i,1))
@@ -274,8 +276,8 @@ int solution(int r,int n)
     return 0;
 }
 
-int main() {
-	// your code goes here
+int main() 
+{
 	cout<<"Enter Sudoku (0 -> Empty):"<<endl;
 	int i,j,k,l;
 	int zero_count=0;
@@ -295,5 +297,6 @@ int main() {
 	}
 	else
 	    cout<<"No solution"<<endl;
+	
 	return 0;
 }
